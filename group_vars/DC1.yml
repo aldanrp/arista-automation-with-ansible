@@ -1,6 +1,6 @@
 ---
 # Default gateway used for the management interface
-mgmt_gateway: 192.169.209.2
+mgmt_gateway: 192.169.85.254
 
 # Spine switch group
 spine:
@@ -9,7 +9,7 @@ spine:
     # Set the relevant platform as each platform has different default values in Ansible AVD
     platform: vEOS-lab
     # Pool of IPv4 addresses to configure interface Loopback0 used for BGP EVPN sessions
-    loopback_ipv4_pool: 10.255.0.0/27
+    loopback_ipv4_pool: 10.235.0.0/27
     # ASN to be used by BGP
     bgp_as: 65100
 
@@ -21,7 +21,7 @@ spine:
       # Device ID definition. An integer number used for internal calculations (ie. IPv4 address of the loopback_ipv4_pool among others)
       id: 1
       # Management IP to be assigned to the management interface
-      mgmt_ip: 192.168.209.149/24
+      mgmt_ip: 192.168.85.13/24
 
     # - name: dc1-spine2
     #   id: 2

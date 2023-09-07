@@ -1,0 +1,11 @@
+# .ansible-lint
+
+exclude_paths:
+
+- .vscode/  
+  - .github/
+
+skip_list:
+
+- 306
+  - 208
