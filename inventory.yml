@@ -8,5 +8,5 @@ all:
             DC1_SPINES:
               hosts:
                 dc1-spine1:
-                  ansible_host: 192.168.209.149
+                  ansible_host: 192.168.85.13
 

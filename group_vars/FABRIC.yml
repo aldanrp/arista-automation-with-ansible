@@ -14,6 +14,8 @@ ansible_become_method: enable
 ansible_httpapi_use_ssl: false
 # Do not try to validate certs
 ansible_httpapi_validate_certs: false
+# Use default EOS ciphers: (ditambahkan untuk http )
+ansible_httpapi_ciphers: AES256-SHA:DHE-RSA-AES256-SHA:AES128-SHA:DHE-RSA-AES128-SHA
 
 # Common AVD group variables
 fabric_name: FABRIC
@@ -74,13 +76,22 @@ terminattr_disable_aaa: true
 
 # DNS Server
 name_servers:
-  - 192.168.209.2
+  - 192.168.85.254
+
+# Management API http-commands 
+custom_structured_configuration_management_api_http:
+  enable_http: true
+  enable_vrfs:
+    - name: MGMT
+      
+  # enable_https: true
+
 
 # NTP Servers IP or DNS name, first NTP server will be prefered, and sourced from Management VRF
-custom_structured_configuration_ntp:
-  local_interface:
-    name: Management1
-    vrf: MGMT
-  servers:
-    - name: 0.pool.ntp.org
-      vrf: MGMT
+# custom_structured_configuration_ntp:
+#   local_interface:
+#     name: Management1
+#     vrf: MGMT
+#   servers:
+#     - name: 0.pool.ntp.org
+#       vrf: MGMT
